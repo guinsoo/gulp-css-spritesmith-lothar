@@ -10,7 +10,7 @@ modify according to gulp-css-spritesmith
         gulp.task('autoSprite', function() { 
                 gulp.src('./public/stylesheets/' + module.name + '/**.css') 
                     .pipe(autoSpriter({ 
-                    //css文件输出地址，文件完整绝对地址 
+                    //css文件输出地址，文件完整绝对地址
                     userFileDir: path.join(__dirname ,'dist/css/', module.name), 
                     // sprite背景图源文件夹，只有匹配此路径才会处理，默认 images/slice/ 
                     imagepath: './public/images/' + module.name, 
@@ -31,8 +31,20 @@ modify according to gulp-css-spritesmith
                     // 在CSS文件末尾追加时间戳，默认不追加
                     cssstamp: false
                 }))
-        });
+            });
         
+        
+增加    <br /> 
+
+                //css文件输出地址，文件完整绝对地址 
+                userFileDir: path.join(__dirname ,'dist/css/', module.name)
+                
+删除    <br />                  
+                
+                .pipe(gulp.dest('dist/css/' + module.name + '/'));
+                
+                
+                
 目录示例：
 
         ├── MyApp/ 
