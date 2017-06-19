@@ -1,0 +1,47 @@
+{
+  "name": "gulp-css-spritesmith-lothar",
+  "description": "modify according to gulp-css-spritesmith",
+  "version": "1.0.0",
+  "homepage": "https://github.com/guinsoo/gulp-css-spritesmith-lothar",
+  "author": {
+    "name": "guinsoo",
+    "email": "lxicang@163.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/guinsoo/gulp-css-spritesmith-lothar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/guinsoo/gulp-css-spritesmith-lothar/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/guinsoo/gulp-css-spritesmith-lothar/blob/master/LICENSE"
+    }
+  ],
+  "main": "lib/gulp-css-spritesmith-lothar",
+  "engines": {
+    "node": ">= 0.9.0"
+  },
+  "scripts": {
+    "test": "cd test && gulp"
+  },
+  "dependencies": {
+    "through2": "~0.6.1",
+    "gulp-util": "~2.2.14",
+    "css-spritesmith": "^0.0.4"
+  },
+  "devDependencies": {
+    "gulp": "~3.5.2",
+    "jshint": "~2.5.10"
+  },
+  "keywords": [
+    "gulpplugin",
+    "spritesmith",
+    "spritesheet",
+    "autosprite",
+    "csssprite",
+    "css"
+  ]
+}
