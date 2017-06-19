@@ -2,11 +2,11 @@
 modify according to gulp-css-spritesmith
 
 此工具根据gulp-css-spritesmith做了稍微修改<br />
-原工具作者：laoshu133<br />
+原工具作者：'laoshu133' <br />
 原工具地址：https://github.com/laoshu133/gulp-css-spritesmith <br />
 修改后配置如下：
 
-        var module.name = ’phone‘；//举个栗子，省略了一些循环 
+        var module.name = 'phone'；//举个栗子，省略了一些循环 
         gulp.task('autoSprite', function() { 
                 gulp.src('./public/stylesheets/' + module.name + '/**.css') 
                     .pipe(autoSpriter({ 
