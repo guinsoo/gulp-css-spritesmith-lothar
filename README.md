@@ -10,14 +10,14 @@ modify according to gulp-css-spritesmith
         gulp.task('autoSprite', function() { 
                 gulp.src('./public/stylesheets/' + module.name + '/**.css') 
                     .pipe(autoSpriter({ 
-                    //css文件输出地址，文件完整绝对地址
-                    userFileDir: path.join(__dirname ,'dist/css/', module.name), 
+                      //用户目录最后一层，配合底部dest使用
+                        userFileDir: module.name, 
                     // sprite背景图源文件夹，只有匹配此路径才会处理，默认 images/slice/ 
                     imagepath: './public/images/' + module.name, 
                     // 映射CSS中背景路径，支持函数和数组，默认为 null 
                     imagepath_map: null,
-                    // 雪碧图输出目录，注意，会覆盖之前文件！默认 images/ 
-                    spritedest: '../../images/' + module.name, 
+                    // 雪碧图输出目录，注意，会覆盖之前文件！默认 images/（当前工作目录dist/css）
+                        spritedest: '../images/' + module.name,
                     // 替换后的背景路径，默认 ../images/ 
                     spritepath: '../../images/' + module.name, 
                     // 各图片间间距，如果设置为奇数，会强制+1以保证生成的2x图片为偶数宽高，默认 0 
@@ -31,18 +31,21 @@ modify according to gulp-css-spritesmith
                     // 在CSS文件末尾追加时间戳，默认不追加
                     cssstamp: false
                 }))
+                 //当前工作目录dist/css
+                .pipe(gulp.dest( path.join(__dirname ,'/dist/css/')));
             });
-        
-        
-增加    <br /> 
-
-                //css文件输出地址，文件完整绝对地址 
-                userFileDir: path.join(__dirname ,'dist/css/', module.name)
+`以下两项需配合使用` 
+<br /> 
+·增加 <br /> 
+                 
+                 //用户目录最后一层，配合底部dest使用
+                 userFileDir: module.name      
+·修改 <br />                  
                 
-删除    <br />                  
-                
-                .pipe(gulp.dest('dist/css/' + module.name + '/'));
-                
+                //当前工作目录dist/css
+                .pipe(gulp.dest( path.join(__dirname ,'/dist/css/')));
+          
+                
                 
                 
 目录示例：
